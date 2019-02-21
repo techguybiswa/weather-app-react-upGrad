@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import PropTypes from 'prop-types';
 
 class SearchBar extends Component {
@@ -12,6 +13,7 @@ class SearchBar extends Component {
       updateCityName(e) {
         this.setState({ cityName: e.target.value })
       }
+
 handleSearchInput() {
 
     console.log('handleSearchInput fired');
@@ -30,7 +32,7 @@ handleSearchInput() {
 <br/>
     <button 
        onClick={this.handleSearchInput}
-       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: 'blue' ,marginTop: '30px'}}
+       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: 'blue' , marginTop: '30px'}}
         >Search</button>
       </div>
     );

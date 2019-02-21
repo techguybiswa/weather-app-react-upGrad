@@ -7,7 +7,8 @@ class WeatherApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        isLoadingTemperature: null,
+        cityNameFound: null,
+        loadingIndicator: false,
         cityName : null,
         cityTemperature: null,
         cityWeatherDescription: null,
@@ -31,14 +32,14 @@ let that = this;
   .then(function(response) {
     if(response.cod === "404") {
         that.setState({
-          isLoadingTemperature: false,
+          cityNameFound: false,
         })
         alert("City name not found. Please try again.");
       }
     else if(response.cod === 200) {
       console.log("Response from openweathermap api " , response);
       that.setState({
-        isLoadingTemperature: true,
+        cityNameFound: true,
         cityTemperature: response.main.temp,
         cityWeatherDescription: response.weather[0].description,
         cityWind : response.wind.speed,
@@ -47,7 +48,7 @@ let that = this;
   });
   }
   render() {
-    let showTemperatureDetails  = this.state.isLoadingTemperature === true ? (
+    let showTemperatureDetails  = this.state.cityNameFound === true ? (
     <WeatherDetails 
     cityName={this.state.cityName} 
     cityTemperature={this.state.cityTemperature} 
