@@ -24,7 +24,7 @@ class AddComment extends Component {
   render() {
     const listOfComments = this.state.comments.map(eachComment => (
         <p 
-        style={{ textAlign: 'left',  }}
+        style={{ textAlign: 'left', background: '#1d5070', padding: '10px', borderRadius: '10px'  }}
         
         >
         >> {eachComment}
@@ -33,7 +33,7 @@ class AddComment extends Component {
     return (
       <div>
           <div 
-          style={{ textAlign: 'left', marginLeft: '200px', marginRight: '200px', border: '2px solid white', padding: '10px', marginBottom: '20px' , background: ''}}
+          style={{ textAlign: 'left', marginLeft: '200px', marginRight: '200px', border: '5px solid white', padding: '10px', marginBottom: '20px'}}
           >
           <h4>Comments: </h4> 
             {listOfComments}
@@ -41,7 +41,7 @@ class AddComment extends Component {
           <textarea
           placeholder="Enter Your comment..."
           value={this.state.userComment}
-          style={{ fontSize: '24px' , width: '70%'}}
+          style={{ fontSize: '24px' , width: '70%', background: '#f7f2ff'}}
           onChange={e => this.updateUserComment(e)}>
 
           </textarea> 
@@ -49,7 +49,7 @@ class AddComment extends Component {
 <br/>
     <button 
        onClick={this.postComment}
-       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: 'blue' ,marginTop: '30px'}}
+       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: '#1d073d' ,marginTop: '30px'}}
         >Comment</button>
       </div>
     );
