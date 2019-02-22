@@ -52,7 +52,7 @@ class AddComment extends Component {
 <br/>
     <button 
        onClick={this.postComment}
-       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: '#1d073d' ,marginTop: '30px'}}
+       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: '#1d073d' ,marginTop: '30px', cursor: 'pointer'}}
         >Comment</button>
       </div>
     );

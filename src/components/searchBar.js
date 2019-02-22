@@ -31,7 +31,7 @@ handleSearchInput() {
 <br/>
     <button 
        onClick={this.handleSearchInput}
-       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: '#1d073d' , marginTop: '30px'}}
+       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: '#1d073d' , marginTop: '30px', cursor: 'pointer'}}
         >Search</button>
       </div>
     );
