@@ -8,8 +8,13 @@ class WeatherDetails extends Component {
   render() {
     return (
       <div>
-       <h1>Temperature in {this.props.cityName} is: <span  style={{ color: '#5f15d6' }}> {this.props.cityTemperature} C </span> </h1>
-       <h3>{this.props.cityWeatherDescription} with {this.props.cityWind} km/hr wind speed</h3>
+       <h1> <span  style={{ color: '#5f15d6', fontSize: '100px' }}> {this.props.cityTemperature} C </span> </h1>
+       <p style={{color: 'white', textAlign: 'center', marginTop:'-35px', fontStyle: 'italic'}}>
+        {this.props.cityWeatherDescription} with {this.props.cityWind} km/hr wind speed
+        <br/>
+        Sunrise: {this.props.citySunrise} Sunset: {this.props.citySunset}
+        </p>
+
        <AddComment></AddComment>
       </div>
     );

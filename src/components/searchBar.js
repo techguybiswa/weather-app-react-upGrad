@@ -15,7 +15,6 @@ class SearchBar extends Component {
       }
 
 handleSearchInput() {
-
     console.log('handleSearchInput fired');
     this.props.searchCity(this.state.cityName);
 }
