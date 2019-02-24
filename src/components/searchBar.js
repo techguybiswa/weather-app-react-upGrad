@@ -26,12 +26,11 @@ handleSearchInput() {
                                     value={this.state.cityName}
                                     style={{ fontSize: '24px' }}
 									onChange={e => this.updateCityName(e)}
-								/>   
-                                    
-<br/>
+								/>  
     <button 
        onClick={this.handleSearchInput}
-       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: '#1d073d' , marginTop: '30px', cursor: 'pointer'}}
+       style={{ background: '#fff', border: '1px solid #b0b0b0',fontSize: '24px',cursor: 'pointer'}}
+      //  style={{ fontSize: '24px', textAlign: 'center', marginTop: '30px', backgroundColor: '#fff' , }}
         >Search</button>
       </div>
     );

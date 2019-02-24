@@ -89,7 +89,7 @@ let that = this;
     ) : (' ')
     return (
       <div>
-       <h1>Weather App on ReactJs </h1>
+       <p style={{fontFamily: 'Roboto,sans-serif', fontSize: '34px', color: '#505050', textAlign : 'center'}}>Weather App on ReactJs </p>
        <SearchBar searchCity={this.searchCity}></SearchBar>
        {showErrorMessage}
       {showTemperatureDetails}

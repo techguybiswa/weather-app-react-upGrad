@@ -4,7 +4,7 @@ class AddComment extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            comments : ['Weather is good.'],
+            comments : [],
             userComment:null,
             }
         this.postComment = this.postComment.bind(this);
@@ -27,24 +27,22 @@ class AddComment extends Component {
   render() {
     const listOfComments = this.state.comments.map(eachComment => (
         <p 
-        style={{ textAlign: 'left', background: '#1d5070', padding: '10px',   }}
-        
+        style={{   textAlign: 'left' }}
         >
-        >> {eachComment}
+        <i class="fa fa-user" aria-hidden="true"></i> {eachComment}
         </p>
     ))
     return (
-      <div>
+      <div style={{paddingLeft: '30%', paddingRight: '30%'}}>
           <div 
-          style={{ textAlign: 'left', marginLeft: '20%', marginRight: '20%', border: '1px solid white', padding: '10px', marginBottom: '20px'}}
           >
-          <h4>Comments: </h4> 
-            {listOfComments}
-          </div>
-          <textarea
+          <div 
+                    style={{border: '1px solid white', padding: '10px', fontFamily: ' Roboto,sans-serif'}}
+                    >
+            <textarea
           placeholder="Enter Your comment..."
           value={this.state.userComment}
-          style={{ fontSize: '24px' , width: '60%', background: '#f7f2ff'}}
+          style={{ fontSize: '24px' , background: '#f7f2ff', width: '100%'}}
           onChange={e => this.updateUserComment(e)}>
 
           </textarea> 
@@ -52,8 +50,16 @@ class AddComment extends Component {
 <br/>
     <button 
        onClick={this.postComment}
-       style={{ fontSize: '24px', textAlign: 'center', color: 'white' , background: '#1d073d' ,marginTop: '30px', cursor: 'pointer'}}
+       style={{ fontSize: '24px', background: '#fff' , cursor: 'pointer', float: 'left'}}
         >Comment</button>
+        <br/>
+                    <p style={{textAlign: 'left', display: 'block'}}><b>Comments ({listOfComments.length})</b> </p> 
+
+            {listOfComments}
+
+            </div>
+          </div>
+      
       </div>
     );
   }
