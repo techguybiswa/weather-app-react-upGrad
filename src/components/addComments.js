@@ -33,7 +33,7 @@ class AddComment extends Component {
         </p>
     ))
     return (
-      <div style={{paddingLeft: '30%', paddingRight: '30%'}}>
+      <div style={{}}>
           <div 
           >
           <div 
@@ -50,7 +50,9 @@ class AddComment extends Component {
 <br/>
     <button 
        onClick={this.postComment}
-       style={{ fontSize: '24px', background: '#fff' , cursor: 'pointer', float: 'left'}}
+       style={{ background: '#3251ED', color: 'white', fontSize: '24px',cursor: 'pointer', float: 'left'}}
+
+      //  style={{ fontSize: '24px', background: '#fff' , cursor: 'pointer', float: 'left'}}
         >Comment</button>
         <br/>
                     <p style={{textAlign: 'left', display: 'block'}}><b>Comments ({listOfComments.length})</b> </p> 
