@@ -24,13 +24,15 @@ handleSearchInput() {
       style={{textAlign: 'center'}}>
 <input
 									placeholder="Enter City Name..."
-                                    value={this.state.cityName}
-                                    style={{ fontSize: '24px' , background: '#FFFFFF', border: '1px solid #E5E5E5', color: '#8C8C99' , boxSizing: 'border-box', borderRadius: '4px', padding: '5px'}}
+                  value={this.state.cityName}
+                  // style={{background: '#FFFFFF',  padding: '10px', marginTop: '10px'   , marginLeft: '20%',  marginRight: '20%'}}
+
+                  style={{ fontSize: '28px' ,width: '600px', background: '#FFFFFF', boxShadow: '0px 4px 32px rgba(143, 143, 143, 0.4)', borderRadius: '4px', border: '1px solid #E5E5E5', color: '#8C8C99' , boxSizing: 'border-box', borderRadius: '4px', padding: '5px'}}
 									onChange={e => this.updateCityName(e)}
 								/>  
     <button 
        onClick={this.handleSearchInput}
-       style={{ background: '#3251ED', color: 'white', fontSize: '27px',cursor: 'pointer'}}
+       style={{ background: '#3251ED', color: 'white', fontSize: '33px',cursor: 'pointer' , boxShadow: '0px 4px 32px rgba(143, 143, 143, 0.4)', borderRadius: '4px',}}
       //  style={{ fontSize: '24px', textAlign: 'center', marginTop: '30px', backgroundColor: '#fff' , }}
         >Search</button>
       </div>

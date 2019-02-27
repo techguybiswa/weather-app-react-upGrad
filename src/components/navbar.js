@@ -6,9 +6,6 @@ class NavBar extends Component {
         this.state = {
             }
       }
-      
-
-
   render() {
     return (
       <div

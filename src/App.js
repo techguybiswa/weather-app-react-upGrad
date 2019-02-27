@@ -18,8 +18,9 @@ class WeatherApp extends Component {
         cityMaxTmp: null,
         cityMinTmp: null,
         cityPressure: null,
-        // citySunrise: null,
-        // citySunset:  null,
+        citySunrise: null,
+        citySunset:  null,
+        cityCountry: null,
 
       }
     console.log("Constructor of WeatherApp class loaded.");
@@ -49,8 +50,8 @@ let that = this;
       }
     else if(response.cod === 200) {
       console.log("Response from openweathermap api " , response);
-      // let sunrise =  new Date(response.sys.sunrise).toLocaleTimeString();
-      // let sunset =  new Date(response.sys.sunset).toLocaleTimeString();
+      let sunrise =  new Date(response.sys.sunrise*1000).toLocaleTimeString();
+      let sunset =  new Date(response.sys.sunset*1000).toLocaleTimeString();
       // console.log("sunrise " ,sunrise);
 
       // sunrise = sunrise.getTime();
@@ -72,10 +73,11 @@ let that = this;
         cityMaxTmp: response.main.temp_max,
         cityMinTmp: response.main.temp_min,
         cityPressure: response.main.pressure,
-        loadingIndicator: false
-
-        // citySunrise: sunrise,
-        // citySunset: sunset
+        weatherIcon: response.weather[0].icon,
+        loadingIndicator: false,
+        cityCountry: response.sys.country,
+        citySunrise: sunrise,
+        citySunset: sunset
 
       })
 
@@ -85,7 +87,7 @@ let that = this;
   render() {
     let showErrorMessage = this.state.cityNameError === true ? (
       <div
-      style={{background: '#FFFFFF',  color: 'grey', textAlign:'center', boxShadow: '0px 4px 32px rgba(143, 143, 143, 0.4)', borderRadius: '4px', padding: '10px', marginTop: '10px' ,  paddingBottom: '10px'  , marginLeft: '30%',  marginRight: '30%'}}
+      style={{background: '#FFFFFF',  color: 'grey', textAlign:'center', boxShadow: '0px 4px 32px rgba(143, 143, 143, 0.4)', borderRadius: '4px', padding: '10px', marginTop: '10px' ,  paddingBottom: '10px'  , marginLeft: '15%',  marginRight: '15%'}}
       >
         <h4>City Name not found</h4>
       </div>
@@ -101,15 +103,17 @@ let that = this;
     cityMaxTmp = {this.state.cityMaxTmp}
     cityMinTmp = {this.state.cityMinTmp}
     cityPressure = {this.state.cityPressure}
-    // citySunset = {this.state.citySunset}
-    // citySunrise = {this.state.citySunrise}
+    weatherIcon = {this.state.weatherIcon}
+    citySunset = {this.state.citySunset}
+    citySunrise = {this.state.citySunrise}
+    cityCountry = {this.state.cityCountry}
 
     ></WeatherDetails>
     
     ) : (
       this.state.loadingIndicator === true ? (
         <div
-      style={{background: '#FFFFFF',  color: 'grey', textAlign:'justify', boxShadow: '0px 4px 32px rgba(143, 143, 143, 0.4)', borderRadius: '4px', padding: '10px', marginTop: '10px' ,  paddingBottom: '10px'  , marginLeft: '30%',  marginRight: '30%'}}
+      style={{background: '#FFFFFF',  color: 'grey', textAlign:'justify', boxShadow: '0px 4px 32px rgba(143, 143, 143, 0.4)', borderRadius: '4px', padding: '10px', marginTop: '10px' ,  paddingBottom: '10px'  , marginLeft: '15%',  marginRight: '15%'}}
       >
         <h4>Searching City name...</h4>
       </div>
@@ -119,7 +123,6 @@ let that = this;
       <div>
         <NavBar></NavBar>
         <br/>
-       {/* <p style={{fontFamily: 'Roboto,sans-serif', fontSize: '34px', color: '#505050', textAlign : 'center'}}>Weather App on ReactJs </p> */}
        <SearchBar searchCity={this.searchCity} ></SearchBar>
        {showErrorMessage}
       {showTemperatureDetails}
